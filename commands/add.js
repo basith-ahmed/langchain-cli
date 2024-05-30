@@ -84,7 +84,7 @@ async function getRelevanceScore(description, featureDescription) {
 //Function to insert the generated code into the file content
 function insertGeneratedCode(fileContent, generatedCode) {
   //Simple implementation: append the generated code at the end
-  return `${fileContent}\n\n// Added by AI Coding Assistant\n${generatedCode}`;
+  return `${fileContent}\n\n// Added by LangChain CLI\n${generatedCode}`;
 }
 
 module.exports = { add };
