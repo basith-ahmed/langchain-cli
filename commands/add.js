@@ -12,7 +12,7 @@ async function add(featureDescription) {
   console.log(`Adding feature: ${featureDescription}`);
 
   //Load the file descriptions
-  const descriptionsPath = path.join(process.cwd(), 'file_descriptions.json');
+  const descriptionsPath = path.join(process.cwd(), 'fileDescriptions.json');
   let descriptions;
   try {
     descriptions = await fs.readJson(descriptionsPath);

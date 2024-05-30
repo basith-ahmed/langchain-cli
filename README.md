@@ -52,7 +52,7 @@ Before using the LangChain CLI, you need to initialize the project:
 npm run langchain-cli init
 ```
 
-This command analyzes all files in the repository and creates descriptions for each file. The file descriptions are stored in `file_descriptions.json` for later use.
+This command analyzes all files in the repository and creates descriptions for each file. The file descriptions are stored in `fileDescriptions.json` for later use.
 
 ## Analyzing Project Files
 
@@ -62,7 +62,7 @@ To analyze the project files and update the file descriptions, run:
 npm run langchain-cli analyze
 ```
 
-This command scans all files in the repository, extracts relevant information, and updates the `file_descriptions.json` file.
+This command scans all files in the repository, extracts relevant information, and updates the `fileDescriptions.json` file.
 
 ## Adding a New Feature
 

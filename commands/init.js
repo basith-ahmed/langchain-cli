@@ -5,8 +5,8 @@ const inquirer = require('inquirer');
 async function init() {
   console.log('Initializing project...');
 
-  //Assuming the analyze command creates a file_descriptions.json
-  const filePath = path.join(process.cwd(), 'file_descriptions.json');
+  //Assuming the analyze command creates a fileDescriptions.json
+  const filePath = path.join(process.cwd(), 'fileDescriptions.json');
   if (await fs.pathExists(filePath)) {
     console.log('Project already initialized.');
   } else {

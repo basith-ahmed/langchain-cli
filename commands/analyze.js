@@ -40,10 +40,10 @@ async function analyze() {
   }
 
   //Write descriptions to a file
-  const outputPath = path.join(process.cwd(), 'file_descriptions.json');
+  const outputPath = path.join(process.cwd(), 'fileDescriptions.json');
   await fs.writeJson(outputPath, descriptions, { spaces: 2 });
 
-  console.log('Analysis complete. Descriptions saved in file_descriptions.json');
+  console.log('Analysis complete. Descriptions saved in fileDescriptions.json');
 }
 
 module.exports = { analyze };
