@@ -1,0 +1,16 @@
+{
+  "name": "ai-coding-assistant",
+  "version": "0.1.0",
+  "description": "AI Coding Assistant CLI",
+  "main": "index.js",
+  "bin": {
+    "ai-coding-assistant": "./index.js"
+  },
+  "scripts": {},
+  "dependencies": {
+    "commander": "^8.0.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.0.0",
+    "openai": "^3.0.0"
+  }
+}
