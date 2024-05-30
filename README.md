@@ -40,8 +40,8 @@ To install and use the LangChain CLI locally, follow these steps:
 
 4. Set up your OpenAI API key as an environment variable:
 
-   ```bash
-   export OPENAI_API_KEY='your-openai-api-key'
+   ```.env
+   OPENAI_API_KEY='your-openai-api-key'
    ```
 
 ## Initialization
