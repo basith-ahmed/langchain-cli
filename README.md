@@ -1,5 +1,5 @@
 > [!WARNING]  
-> This product is currently under development and is publicly accessible for open-source purposes only. Please exercise caution and run it locally only if you are familiar with OpenAI APIs.
+> This product is currently under development and is publicly accessible for open-source purposes only. Please exercise caution and run it locally only if you are familiar with OpenAI APIs and JS.
 
 # LangChain CLI
 
