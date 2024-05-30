@@ -52,7 +52,7 @@ async function add(featureDescription) {
   //Generate the code for the new feature using OpenAI
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `You are an expert in React and JavaScript. The user wants to add the following feature to the file:\n\n${fileContent}\n\nFeature: ${featureDescription}\n\nGenerate the necessary code for this feature.`,
+    prompt: `You are an expert in React and JavaScript. The user wants to add the following feature to the file:\n\n${fileContent}\n\nFeature: ${featureDescription}\n\nGenerate the necessary code for this feature and return the entire updated file with necessary changes.`,
     max_tokens: 150,
   });
 
