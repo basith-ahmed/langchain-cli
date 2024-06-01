@@ -30,7 +30,7 @@ async function fix() {
 
       const response = await openai.createCompletion({
         model: 'text-davinci-003',
-        prompt: `You are a coding assistant. The user wants to scan the following file for errors and fix them:\n\n${fileContent}\n\nPlease provide the fixed version of the file content.`,
+        prompt: `You are a coding assistant. The user wants to scan the following file for errors and fix them:\n\n${fileContent}\n\nPlease provide the fixed version of the file content. Only return the complete code.`,
         max_tokens: 500,
       });
 

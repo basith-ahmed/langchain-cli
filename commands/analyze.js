@@ -31,8 +31,8 @@ async function analyze() {
 
       const response = await openai.createCompletion({
         model: 'text-davinci-003',
-        prompt: `Describe the components, functions, and elements in the following file content:\n\n${content}`,
-        max_tokens: 150,
+        prompt: `Write a brief description about the components, functions, and elements, etc in the following file content so we can later use just this descriptions to get the complete idea of what is going on in the file:\n\n${content}`,
+        max_tokens: 250,
       });
 
       descriptions[file] = response.data.choices[0].text.trim();

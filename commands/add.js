@@ -52,18 +52,18 @@ async function add(featureDescription) {
   //Generate the code for the new feature using OpenAI
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `You are an expert in React and JavaScript. The user wants to add the following feature to the file:\n\n${fileContent}\n\nFeature: ${featureDescription}\n\nGenerate the necessary code for this feature and return the entire updated file with necessary changes.`,
-    max_tokens: 150,
+    prompt: `You are an expert in React and JavaScript. The user wants to add the following feature to the file:\n\n${fileContent}\n\nFeature: ${featureDescription}\n\n Generate the complete code for this feature and return only the code of the entire updated file along with all the changes.`,
+    max_tokens: 500,
   });
 
   const generatedCode = response.data.choices[0].text.trim();
 
   //Insert the generated code into the most relevant file
-  const updatedContent = insertGeneratedCode(fileContent, generatedCode);
+  // const updatedContent = insertGeneratedCode(fileContent, generatedCode);
 
   //Write the updated content back to the file
   try {
-    await fs.writeFile(mostRelevantFile, updatedContent, 'utf-8');
+    await fs.writeFile(mostRelevantFile, generatedCode, 'utf-8');
     console.log('Feature added successfully.');
   } catch (error) {
     console.error(`Error writing file: ${error.message}`);
@@ -81,10 +81,11 @@ async function getRelevanceScore(description, featureDescription) {
   return parseInt(response.data.choices[0].text.trim(), 10);
 }
 
-//Function to insert the generated code into the file content
-function insertGeneratedCode(fileContent, generatedCode) {
+//Function to insert the generated code into the file content - WORKING
+// function insertGeneratedCode(fileContent, generatedCode) {
   //Simple implementation: append the generated code at the end
-  return `${fileContent}\n\n// Added by LangChain CLI\n${generatedCode}`;
-}
+  // return `${fileContent}\n\n// Added by LangChain CLI\n${generatedCode}`;
+  // return generatedCode;
+// }
 
 module.exports = { add };
