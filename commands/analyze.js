@@ -40,10 +40,16 @@ async function analyze() {
   }
 
   //Write descriptions to a file
-  const outputPath = path.join(process.cwd(), 'fileDescriptions.json');
-  await fs.writeJson(outputPath, descriptions, { spaces: 2 });
-
-  console.log('Analysis complete. Descriptions saved in fileDescriptions.json');
+   const outputPath = path.join(process.cwd(), 'fileDescriptions.json');
+  try {
+    //Ensure the file exists - creates new file if it doesn't already exist.
+    await fs.ensureFile(outputPath);
+    //Write JSON content to the file
+    await fs.writeJson(outputPath, descriptions, { spaces: 2 });
+    console.log('Analysis complete. Descriptions saved in fileDescriptions.json');
+  } catch (error) {
+    console.error('Error writing descriptions to file:', error);
+  }
 }
 
 module.exports = { analyze };
