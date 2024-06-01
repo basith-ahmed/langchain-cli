@@ -1,0 +1,6 @@
+{
+  file-one: "This file contains so and so components and features...",
+  file-two: "This file manages the authentication features and...",
+  file-three: "This is the database schema. it contains schemas of user, post,...",
+  .....
+}
