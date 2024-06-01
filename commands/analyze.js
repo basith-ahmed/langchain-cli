@@ -26,7 +26,43 @@ async function analyze() {
 
   //Describe each file
   for (const file of files) {
-    if (file.endsWith('.js') || file.endsWith('.ts') || file.endsWith('.jsx') || file.endsWith('.tsx')) {
+    if (
+      file.endsWith('.js') || 
+      file.endsWith('.ts') || 
+      file.endsWith('.jsx') || 
+      file.endsWith('.tsx') || 
+      file.endsWith('.prisma') || 
+      file.endsWith('.html') || 
+      file.endsWith('.css') || 
+      file.endsWith('.scss') || 
+      file.endsWith('.less') || 
+      file.endsWith('.json') || 
+      file.endsWith('.xml') || 
+      file.endsWith('.yml') || 
+      file.endsWith('.yaml') || 
+      file.endsWith('.md') || 
+      file.endsWith('.markdown') || 
+      file.endsWith('.php') || 
+      file.endsWith('.asp') || 
+      file.endsWith('.aspx') || 
+      file.endsWith('.vue') || 
+      file.endsWith('.svelte') || 
+      file.endsWith('.rb') || 
+      file.endsWith('.py') || 
+      file.endsWith('.java') || 
+      file.endsWith('.go') || 
+      file.endsWith('.sh') || 
+      file.endsWith('.sh') || 
+      file.endsWith('.rb') || 
+      file.endsWith('.pl') || 
+      file.endsWith('.cgi') || 
+      file.endsWith('.jade') || 
+      file.endsWith('.pug') || 
+      file.endsWith('.ejs') || 
+      file.endsWith('.njk') || 
+      file.endsWith('.hbs') || 
+      file.endsWith('.handlebars')
+      ) {
       const content = await fs.readFile(file, 'utf-8');
 
       const response = await openai.createCompletion({
