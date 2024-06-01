@@ -9,7 +9,7 @@ const { fix } = require('./commands/fix');
 
 program
   .version('0.1.0')
-  .description('AI Coding Assistant CLI');
+  .description('LangChain CLI - Your personal coding assistant');
 
 program
   .command('init')
