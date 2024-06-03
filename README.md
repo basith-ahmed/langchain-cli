@@ -108,7 +108,7 @@ This command iterates through all files in the repository, identifies errors, an
 - **Adding a New Feature:**
   
   ```bash
-  npm run langchain-cli add 'add a green sponsor button to the nav bar'
+  npm run langchain-cli add 'add a green button to the nav bar'
   ```
 
 - **Fixing Errors:**
