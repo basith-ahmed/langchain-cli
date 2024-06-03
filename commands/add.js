@@ -21,17 +21,17 @@ async function add(featureDescription) {
     return;
   }
 
-  //Find the most relevant file
-  let mostRelevantFile = '';
-  let highestRelevanceScore = 0;
+  //Prepare the prompt
+  const prompt = `You are an expert in code analysis. Here is the description of files in the project:\n\n${JSON.stringify(descriptions, null, 2)}\n\nBased on this description, which file is the most relevant for the following feature request?\n\nFeature request: ${featureDescription}\n\nProvide the file name only.`;
 
-  for (const [file, description] of Object.entries(descriptions)) {
-    const relevanceScore = await getRelevanceScore(description, featureDescription);
-    if (relevanceScore > highestRelevanceScore) {
-      highestRelevanceScore = relevanceScore;
-      mostRelevantFile = file;
-    }
-  }
+  //Get the most relevant file using OpenAI
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: prompt,
+    max_tokens: 50,
+  });
+
+  const mostRelevantFile = response.data.choices[0].text.trim();
 
   if (!mostRelevantFile) {
     console.error('No relevant file found.');
@@ -71,15 +71,15 @@ async function add(featureDescription) {
 }
 
 //Function to calculate relevance score based on description and feature description
-async function getRelevanceScore(description, featureDescription) {
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: `On a scale of 1 to 10, how relevant is the following file description to the feature description?\n\nFile Description: ${description}\n\nFeature Description: ${featureDescription}`,
-    max_tokens: 1,
-  });
+// async function getRelevanceScore(description, featureDescription) {
+//   const response = await openai.createCompletion({
+//     model: 'text-davinci-003',
+//     prompt: `On a scale of 1 to 10, how relevant is the following file description to the feature description?\n\nFile Description: ${description}\n\nFeature Description: ${featureDescription}`,
+//     max_tokens: 1,
+//   });
 
-  return parseInt(response.data.choices[0].text.trim(), 10);
-}
+//   return parseInt(response.data.choices[0].text.trim(), 10);
+// }
 
 //Function to insert the generated code into the file content - WORKING
 // function insertGeneratedCode(fileContent, generatedCode) {
