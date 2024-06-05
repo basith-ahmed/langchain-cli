@@ -35,33 +35,9 @@ async function analyze() {
       file.endsWith('.html') || 
       file.endsWith('.css') || 
       file.endsWith('.scss') || 
-      file.endsWith('.less') || 
       file.endsWith('.json') || 
-      file.endsWith('.xml') || 
-      file.endsWith('.yml') || 
-      file.endsWith('.yaml') || 
       file.endsWith('.md') || 
-      file.endsWith('.markdown') || 
-      file.endsWith('.php') || 
-      file.endsWith('.asp') || 
-      file.endsWith('.aspx') || 
-      file.endsWith('.vue') || 
-      file.endsWith('.svelte') || 
-      file.endsWith('.rb') || 
-      file.endsWith('.py') || 
-      file.endsWith('.java') || 
-      file.endsWith('.go') || 
-      file.endsWith('.sh') || 
-      file.endsWith('.sh') || 
-      file.endsWith('.rb') || 
-      file.endsWith('.pl') || 
-      file.endsWith('.cgi') || 
-      file.endsWith('.jade') || 
-      file.endsWith('.pug') || 
-      file.endsWith('.ejs') || 
-      file.endsWith('.njk') || 
-      file.endsWith('.hbs') || 
-      file.endsWith('.handlebars')
+      file.endsWith('.php')
       ) {
       const content = await fs.readFile(file, 'utf-8');
 
